@@ -23,8 +23,6 @@ database.ref().set({
 
 database.ref('age').set(27);
 database.ref('location/city').set('San Francisco')
-// database.ref('attributes/height').set(65)
-// database.ref('attributes/weight').set(180)
 
 database.ref('attributes').set(
   {
