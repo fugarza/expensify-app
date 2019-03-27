@@ -16,17 +16,13 @@ const store = configureStore();
 
 // add default objects to store
 // use dispatch to do anything to redux store
-store.dispatch(addExpense({description: 'Water Bill',amount: 5000, createdAt: 1000}));
-store.dispatch(addExpense({ description: 'Gas Bill', amount: 4650, createdAt: 1100 }));
-store.dispatch(addExpense({ description: 'Rent', amount: 19650, createdAt: 1500 }));
-store.dispatch(setTextFilter());
+// store.dispatch(addExpense({description: 'Water Bill',amount: 5000, createdAt: 1000}));
+// store.dispatch(addExpense({ description: 'Gas Bill', amount: 4650, createdAt: 1100 }));
+// store.dispatch(addExpense({ description: 'Rent', amount: 19650, createdAt: 1500 }));
+// store.dispatch(setTextFilter());
 
-const state = store.getState();
-const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-
-// console.log(getVisibleExpenses(state.expenses, state.filters));
-console.log(visibleExpenses)
-
+// const state = store.getState();
+// const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
 
 // Provider setup from react-redux
 // store=  is the store you want to share with rest of app
