@@ -27,6 +27,7 @@
     "moment": "2.18.1",
     "node-sass": "4.5.3",
     "normalize.css": "7.0.0",
+    "numeral": "2.0.6",
     "react": "^16.8.4",
     "react-addons-shallow-compare": "^15.6.2",
     "react-dates": "12.7.0",
@@ -40,7 +41,6 @@
     "uuid": "3.1.0",
     "validator": "8.0.0",
     "webpack": "3.1.0"
-    
   },
   "devDependencies": {
     "enzyme": "3.0.0",
