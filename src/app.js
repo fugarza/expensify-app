@@ -9,6 +9,7 @@ import getVisibleExpenses from './selectors/expenses';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import './firebase/firebase'
+import { Map } from 'core-js';
 
 
 // Create default store
@@ -23,7 +24,7 @@ const store = configureStore();
 
 // const state = store.getState();
 // const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-
+// console.log(visibleExpenses)
 // Provider setup from react-redux
 // store=  is the store you want to share with rest of app
 const jsx = (
@@ -32,5 +33,6 @@ const jsx = (
   </Provider>
 ) 
 ReactDOM.render(jsx, document.getElementById('app'));
+
 
 

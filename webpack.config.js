@@ -7,7 +7,10 @@ module.exports = (env) => {
   const CSSExtract = new ExtractTextPlugin('styles.css');
   
   return {
+    // playground to test out code
     entry: './src/app.js',
+    
+    // entry: './src/app.js',
     output: {
       // absolute path to where bundle.js is
       path: path.join(__dirname, 'public', 'dist'),
