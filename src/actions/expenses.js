@@ -53,16 +53,3 @@ export const editExpense = (id, updates) => ({
 });
 
 
-let data = {
-  name: 'ron',
-  amount: 100
-}
-
-expenseData = (data = {}) => {
-  const {
-    name = '',
-    amount = 0
-  } = data;
-  const expense = { name, amount}
-  return expense
-}

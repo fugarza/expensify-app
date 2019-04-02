@@ -5,7 +5,7 @@ const config = {
   authDomain: process.env.FIREABASE_AUTH_DOMAIN,
   databaseURL: process.env.FIRABASE_DATABASE_URL,
   projectId: process.env.FIREBASE_PROJECT_ID,
-  storageBucket: FIREABASE_STORAGE_BUCKET,
+  storageBucket: process.env.FIREABASE_STORAGE_BUCKET,
   messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER
 };
 firebase.initializeApp(config);
