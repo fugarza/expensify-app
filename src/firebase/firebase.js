@@ -1,32 +1,16 @@
 import * as firebase from 'firebase';
 
 const config = {
-  apiKey: "AIzaSyBJyd12h3MJpc6o4Gm0Esho_PmWaHiRoKk",
-  authDomain: "expensify-d738b.firebaseapp.com",
-  databaseURL: "https://expensify-d738b.firebaseio.com",
-  projectId: "expensify-d738b",
-  storageBucket: "expensify-d738b.appspot.com",
-  messagingSenderId: "906724646547"
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREABASE_AUTH_DOMAIN,
+  databaseURL: process.env.FIRABASE_DATABASE_URL,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: FIREABASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER
 };
 firebase.initializeApp(config);
 
+// get a reference to the root of the database
 const database = firebase.database()
-database.ref().set({
-  name: 'Ron Gaza',
-  age: 42,
-  isSingle: false,
-  location: {
-    city: 'Danville',
-    state: 'CA'
-  }
-})
 
-database.ref('age').set(27);
-database.ref('location/city').set('San Francisco')
-
-database.ref('attributes').set(
-  {
-    height: 65,
-    weight: 180
-  }
-)
+export {firebase, database as default};
