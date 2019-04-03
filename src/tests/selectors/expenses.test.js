@@ -1,7 +1,6 @@
+import moment from 'moment';
 import selectExpenses from '../../selectors/expenses';
-import moment from 'moment'
-import expenses from '../fixtures/expenses'
-
+import expenses from '../fixtures/expenses';
 
 test('should filter by text value', () => {
   const filters = {
@@ -11,11 +10,10 @@ test('should filter by text value', () => {
     endDate: undefined
   };
   const result = selectExpenses(expenses, filters);
-  expect(result).toEqual([expenses[2], expenses[0]]);
+  expect(result).toEqual([expenses[2], expenses[1]]);
 });
 
-// expect startDate and endDate to be moment() instances
-test('should filter by start date', () => {
+test('should filter by startDate', () => {
   const filters = {
     text: '',
     sortBy: 'date',
@@ -23,41 +21,38 @@ test('should filter by start date', () => {
     endDate: undefined
   };
   const result = selectExpenses(expenses, filters);
-  expect(result).toEqual([expenses[2], expenses[0]])
+  expect(result).toEqual([expenses[2], expenses[0]]);
 });
 
-// should filter by endDate
-test('should filter by end date', () => {
+test('should filter by endDate', () => {
   const filters = {
     text: '',
     sortBy: 'date',
     startDate: undefined,
-    endDate: moment(0).subtract(1,'days')
-  }
+    endDate: moment(0).add(2, 'days')
+  };
   const result = selectExpenses(expenses, filters);
-  expect(result).toEqual([expenses[1]])
+  expect(result).toEqual([expenses[0], expenses[1]]);
 });
 
-// should sort by date
 test('should sort by date', () => {
   const filters = {
     text: '',
     sortBy: 'date',
     startDate: undefined,
     endDate: undefined
-  }
-  const result = selectExpenses(expenses, filters)
-  expect(result).toEqual([expenses[2], expenses[0], expenses[1]])
+  };
+  const result = selectExpenses(expenses, filters);
+  expect(result).toEqual([expenses[2], expenses[0], expenses[1]]);
 });
 
-// should sort by amount
 test('should sort by amount', () => {
   const filters = {
     text: '',
-    sortBy: 'amount', 
+    sortBy: 'amount',
     startDate: undefined,
     endDate: undefined
-  }
-  const result = selectExpenses(expenses, filters)
-  expect(result).toEqual([expenses[0], expenses[1], expenses[2] ])
+  };
+  const result = selectExpenses(expenses, filters);
+  expect(result).toEqual([expenses[1], expenses[2], expenses[0]]);
 });
